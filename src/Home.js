@@ -1,6 +1,15 @@
-const Home = () => {
+import { Link } from 'react-router-dom';
+
+const Home = (props) => {
+    const colors = props.colors;
     return (
-        <div>Welcome to the Color Factory.</div>
+        <>
+            <h1>Welcome to the Color Factory!</h1>
+            <h4>Please select a color.</h4>
+            {colors.map(color => (
+                <Link to={`colors/${color}`}>{color}</Link>
+            ))}
+        </>
     )
 }
 
