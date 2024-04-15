@@ -1,20 +1,21 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Color = () => {
-    const { name } = useParams();
-    console.log(name)
+    const { color } = useParams();
+
     return (
         <>
-            <div>This is the color, <b>{name}</b>.</div>
+            <div>This is the color, <b>{color}</b>.</div>
 
             <div style={{
-                marginTop: '2em',
+                margin: '2em',
                 width: '50px',   
                 height: '50px',  
                 borderRadius: '50%', 
-                backgroundColor: `${name}` 
+                backgroundColor: `${color}` 
             }}></div>
 
+            <Link to="/colors">Back</Link>
         </>
 
     )
